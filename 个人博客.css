@@ -1,0 +1,66 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: "Microsoft YaHei", sans-serif;
+    background: #f5f5f7;
+}
+.导航 {
+    background: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    padding: 20px;
+    font-weight: bold;
+    position: sticky;
+    top: 0;
+}
+.导航::after {
+    content: "";
+    display: block;
+    background: aliceblue;
+    width: 15%;
+    height: 1px;
+}
+.博客内容 {
+    display: flex;
+    font-size: 16px;
+}
+.作者信息 {
+    background: rgb(255, 255, 255);
+    width: 240px;
+}
+.主内容区 {
+    background: rgb(255, 255, 255);
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+    padding: 10px;
+}
+.卡片 {
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.卡片:hover {
+    background: #f0f0f0;
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.4);
+}
+@media (max-width: 786px) {
+    .博客内容{
+        flex-direction: column;
+    }
+    .作者信息 {
+        width: 100%;
+    }
+    .主内容区 {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,40 @@
+/* 重置默认样式 */
+* {
+  margin: 0;          /* 去掉所有元素默认外边距 */
+  padding: 0;         /* 去掉所有元素默认内边距 */
+  box-sizing: border-box; /* 宽高包含边框，算起来更准 */
+}
+
+body {
+  background: #f0f0f0;
+  font-family: "Microsoft YaHei", sans-serif; /* 字体：微软雅黑 */
+}
+.navbar {
+  display: flex;                /* 弹性布局 */
+  justify-content: space-between;   /* 两端对齐，导航项分散 */
+  align-items: center;          /* 垂直居中 */
+  background: #333;             /* 导航栏背景色：深灰 */
+  padding: 12px 24px;          /* 导航栏内边距：上下12px左右24px */
+  height: 60px;                /* 导航栏高度：60像素 */
+}
+.logo {
+  color: aliceblue;
+  font-size: 20px;              /* Logo字体大小：20像素 */
+  font-weight: bold;           /* Logo字体加粗 */
+}
+
+.nav-links {
+  display: flex;                /* 让li横着排 */
+  list-style: none;          /* 去掉li默认的圆点 */
+  gap: 30px;                    /* 导航项之间的间距：30像素 */
+}
+
+.nav-links a {
+  color: white;       
+  text-decoration: none;    /* 导航链接无下划线 */
+  font-size: 16px;        /* 导航链接字体大小：16像素 */
+}
+
+.nav-links a:hover {
+  color: #ddd;           /* 鼠标悬停时颜色变浅 */
+}

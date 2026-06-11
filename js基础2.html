@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ZH-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS DOM 练习</title>
+    <style>
+        body{
+            background-color: #1d1d1d;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding-top: 50px;
+        }
+        .卡片{
+            background: #2d2d2d;
+            border-radius: 15px;
+            padding: 30px;
+            margin: 20px auto;
+            width: 400px;
+        }
+        .完成{
+            color: #4caf50;
+        }
+        .高亮{
+            border: 2px solid #ff9800;
+            box-shadow: 0 0 15px rgba(255, 152, 0, 0.5);
+        }
+        button {
+            backdrop-filter: blur(10px);
+            background: #f0f0f0f7;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(255, 255, 255, 0.2);
+        }
+        button:hover {
+            background: #f0f0f0;
+            transform: translateY(-3px) scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <h1 id="标题">欢迎</h1>
+    <p class="描述">这是一段描述文字</p>
+    <div class="卡片">
+        <h2>卡片标题</h2>
+        <p class="卡片内容">卡片里的内容</p>
+    </div>
+
+    <!-- 自我介绍修改器练习 -->
+    <h2 id="姓名">张三</h2>
+    <p class="自我介绍">大家好,我是张三,今年20岁</p>
+    <p class="技能">我会：打游戏</p>
+
+    <!-- 事件练习 -->
+    <button id="点我按钮">点我</button>
+    <p id="计数器">0</p>
+
+    <!-- 巩固练习 -->
+    <div id="色块" style="width:150px;height:150px;background:#4caf50;margin:20px auto;border-radius:15px;"></div>
+    <button id="变色按钮">换颜色</button>
+
+    <p id="显示文字" style="font-size:20px;">我能被隐藏</p>
+    <button id="切换按钮">显示/隐藏</button>
+
+    <p id="倒数">10</p>
+    <button id="减一按钮">-1</button>
+
+    <!-- if/else 切换专项练习 -->
+    <p id="状态文字">当前状态：开</p>
+    <button id="开关按钮">切换开关</button>
+
+    <p id="切换色块" style="width:100px;height:100px;background:#ff9800;margin:20px auto;border-radius:15px;"></p>
+    <button id="颜色切换按钮">切换颜色</button>
+
+    <!-- 输入框练习 -->
+    <input type="text" id="输入框" placeholder="请输入你的名字" style="padding:10px;border-radius:10px;border:none;font-size:16px;text-align:center;">
+    <p id="显示区">上面输入的内容会显示在这里</p>
+    <p id="字数统计">字数:0</p>
+
+    <!-- 名片生成器 -->
+    <p style="margin-top:40px;color:#888;">--- 名片生成器 ---</p>
+    <input type="text" id="名字输入" placeholder="你的名字" style="display:block;margin:10px auto;padding:10px;border-radius:10px;border:none;font-size:16px;text-align:center;">
+    <input type="text" id="技能输入" placeholder="你的技能" style="display:block;margin:10px auto;padding:10px;border-radius:10px;border:none;font-size:16px;text-align:center;">
+    <button id="生成按钮">生成名片</button>
+
+    <div class="卡片" id="名片">
+        <h2 id="名片名字">---</h2>
+        <p id="名片技能">---</p>
+    </div>
+
+    <!-- classList 练习 -->
+    <div class="卡片" id="练习卡片">
+        <p>给我加个高亮边框</p>
+    </div>
+    <button id="高亮按钮">高亮/取消</button>

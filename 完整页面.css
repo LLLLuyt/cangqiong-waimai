@@ -1,0 +1,53 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  background-color: rgb(255, 170, 0);
+  font-family: "Microsoft YaHei", sans-serif;
+}
+.daohanglan{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #333;
+  padding: 12px 24px;
+  height: 60px;
+}
+.logo{
+  color: aliceblue;
+  font-size: 20px;
+}
+.links{
+  display: flex;
+  list-style: none;
+  gap: 30px;
+}
+.links a{
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+}
+.links a:hover{
+  color: #501414;
+}
+.container{
+  display: flex;
+  min-height: calc(100vh - 60px);
+}
+.left{
+  background: aliceblue;
+  width: 200px;
+  padding: 20px;
+}
+.right{
+  background: #e00000;
+  width: 200px;
+  padding: 20px;
+}
+.center{
+  flex: 1;
+  background: rgb(0, 132, 255);
+  padding: 24px;
+}

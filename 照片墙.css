@@ -1,0 +1,45 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+.照片墙 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+}
+.照片 img{
+     width: 100%;
+     display: block;
+     border-radius: 15px;
+     object-fit: cover;
+}
+.照片 {
+    transition:all 0.3s ease;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    background: rgb(255, 255, 255);
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+.照片:hover {
+    background: darkgrey;
+    transform: translateY(-4px) scale(1.1);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
+}
+@media (max-width: 768px) {
+    .照片墙 {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+@media (max-width: 480px) {
+    .照片墙 {
+        grid-template-columns: 1fr;
+    }
+}

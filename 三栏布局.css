@@ -1,0 +1,29 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  background-color: rgb(255, 170, 0);
+  font-family: "Microsoft YaHei", sans-serif;
+}
+.container{
+  display: flex;
+  min-height: 100vh;
+}
+.left{
+  background: aliceblue;
+  width: 200px;
+  padding: 20px;
+}
+.right{
+  background: rgb(0, 0, 0);
+  width: 200px;
+  padding: 20px;
+  color: cornsilk;
+}
+.center{
+  flex: 1;
+  background: blue;
+  padding: 24px;
+}

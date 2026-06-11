@@ -1,0 +1,120 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f5f5f7;
+    color: #1d1d1d;
+    font-family: "Segoe UI", Arial, sans-serif;
+    max-width: 450px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+h1 {
+    text-align: center;
+    font-weight: 300;
+    font-size: 32px;
+    margin-bottom: 30px;
+}
+
+.输入区 {
+    background: #fff;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    margin-bottom: 25px;
+}
+
+.输入区 input {
+    display: block;
+    width: 100%;
+    margin-bottom: 12px;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    font-size: 15px;
+    font-family: inherit;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.输入区 input:focus {
+    border-color: #34c759;
+}
+
+.输入区 button {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background: #34c759;
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.输入区 button:hover {
+    background: #28a745;
+}
+
+.账单区 {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+#空提示 {
+    text-align: center;
+    color: #999;
+    font-size: 14px;
+    padding: 40px 0;
+}
+
+.账单卡片 {
+    background: #fff;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    position: relative;
+    border-left: 4px solid #34c759;
+}
+
+.账单卡片 .项目名 {
+    font-weight: 600;
+    font-size: 16px;
+    color: #1d1d1d;
+    margin-bottom: 4px;
+}
+
+.账单卡片 .时间 {
+    font-size: 12px;
+    color: #999;
+    margin-bottom: 6px;
+}
+
+.账单卡片 .金额 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #34c759;
+}
+
+.账单卡片 .删除按钮 {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    color: #ccc;
+    font-size: 18px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.账单卡片 .删除按钮:hover {
+    color: #f44336;
+}

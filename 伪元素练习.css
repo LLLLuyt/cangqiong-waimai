@@ -1,0 +1,38 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background: dimgrey;
+  font-family: "Microsoft YaHei", sans-serif;
+  padding: 60px;
+}
+.标题 {
+  font-size: 28px;
+}
+.标题::before {
+  content: "";  /* 必须！伪元素没 content 不显示 */
+  display: block; /* 让伪元素成为块级元素 */
+  width: 60px;
+  height: 4px;
+  background: darkblue;
+  margin-bottom: 12px;
+}
+.标题::after {
+  content: "";  /* 必须！伪元素没 content 不显示 */
+  display: block; /* 让伪元素成为块级元素 */
+  width: 60px;
+  height: 4px;
+  background: darkblue;
+  margin-top: 12px;
+}
+.提示::after {
+  content: "NEW";  /* 不是空字符串了，直接塞文字 */
+  display: inline-block; /* 行内块，跟文字同一行 */
+  background: brown;
+  color: white;
+  font-size: 12px;
+  padding: 2px 6px;
+  margin-left: 8px;
+}

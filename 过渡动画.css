@@ -1,0 +1,42 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background: saddlebrown;
+  font-family: "Microsoft YaHei", sans-serif;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  padding: 100px;
+}
+.按钮 {
+  padding: 12px 24px;
+  font-size: 18px;
+  background: turquoise;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;  /* 鼠标变手指 */
+  transition: all 0.3s ease;   /* 核心：所有变化 0.3 秒平滑过渡 */
+}
+.按钮:hover {
+  background: rgb(0, 0, 0);
+  transform: translateY(-3px); /* 鼠标悬停时背景变黑，按钮上移 3px */
+}
+.卡片 {
+  background: white;
+  width: 200px;
+  height: 200px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  transition: all 0.3s ease;   /* 核心：所有变化 0.3 秒平滑过渡 */
+}
+.卡片:hover {
+  transform: scale(1.1)  rotate(3deg); /* 鼠标悬停时放大 110% 旋转 3 度 */
+  box-shadow:0 8px 28px rgba(0, 0, 0, 0.3); /* 添加阴影效果 */
+}

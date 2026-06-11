@@ -1,0 +1,59 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background: #f0f0f0;
+    font-family: "Microsoft YaHei", sans-serif;
+}
+h1{
+    text-align: center;
+    margin-bottom: 20px;
+}
+p{
+    text-align: center;
+}
+.团队简介 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 20px;
+    padding: 30px 20px;
+    cursor: pointer;
+}
+.员工 {
+    overflow: hidden;
+    background: white;
+    border-radius: 15%;
+    width: 100%;
+    padding: 20px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
+    transition: all 0.3s ease;
+}
+.员工 img {
+    width: 200px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+.员工:hover {
+    transform: translateY(-4px) scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+}
+@media (max-width: 768px) {
+    .团队简介 {
+        grid-template-columns: 1fr;
+    }
+}
+.姓名 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.职位 {
+    font-size: 14px;
+    color: #666;
+}

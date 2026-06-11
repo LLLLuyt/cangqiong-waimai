@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="ZH-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>待办清单</title>
+    <style>
+        /* ====== 苹果风格 + 毛玻璃 ====== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            /* 柔光渐变背景 */
+            background: linear-gradient(135deg, #f5f5f7 0%, #e8e8ed 50%, #f0f0f5 100%);
+            min-height: 100vh;
+            color: #1d1d1f;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+            text-align: center;
+            padding-top: 80px;
+        }
+
+        h1 {
+            font-size: 34px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            color: #1d1d1f;
+            margin-bottom: 10px;
+        }
+
+        /* 毛玻璃卡片 */
+        .卡片 {
+            background: rgba(255, 255, 255, 0.55);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 24px auto;
+            width: 420px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            transition: box-shadow 0.3s ease;
+        }
+
+        .卡片:hover {
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        /* 计数区 */
+        .卡片 #计数显示 {
+            background: rgba(0, 0, 0, 0.04);
+            color: #86868b;
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 12px;
+            padding: 8px 16px;
+            border-radius: 20px;
+            display: inline-block;
+        }
+
+        /* 待办项 */
+        .卡片 p:not(#计数显示) {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            margin: 8px 0;
+            padding: 12px 16px;
+            border-radius: 12px;
+            font-size: 15px;
+            color: #1d1d1f;
+            text-align: left;
+            border: 1px solid rgba(0, 0, 0, 0.06);
+            transition: all 0.3s ease;
+        }
+
+        .卡片 p:not(#计数显示):hover {
+            background: rgba(255, 255, 255, 0.9);
+            transform: translateX(4px);
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+        }
+
+        /* 输入框 */
+        input {
+            display: block;
+            margin: 16px auto;
+            padding: 14px 20px;
+            border-radius: 14px;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            font-size: 15px;
+            color: #1d1d1f;
+            text-align: center;
+            width: 340px;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        input::placeholder {
+            color: #aeaeb2;
+        }
+
+        input:focus {
+            border-color: #0071e3;
+            background: rgba(255, 255, 255, 0.85);
+            box-shadow: 0 0 0 4px rgba(0, 113, 227, 0.15);
+        }
+
+        /* 按钮通用 */
+        button {
+            background: #0071e3;
+            color: #fff;
+            border: none;
+            padding: 12px 28px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 15px;
+            font-weight: 500;
+            margin: 6px;
+            letter-spacing: 0.3px;
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            background: #0077ed;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 113, 227, 0.3);
+        }
+
+        button:active {
+            transform: translateY(0) scale(0.97);
+            box-shadow: 0 2px 8px rgba(0, 113, 227, 0.2);
+        }
+
+        /* 删除按钮 — 苹果红 */
+        #删除最后按钮 {
+            background: #ff3b30;
+        }
+
+        #删除最后按钮:hover {
+            background: #ff453a;
+            box-shadow: 0 6px 20px rgba(255, 59, 48, 0.3);
+        }
+
+        #删除最后按钮:active {
+            box-shadow: 0 2px 8px rgba(255, 59, 48, 0.2);
+        }
+
+        /* ====== 自定义弹窗 ====== */
+
+        /* 遮罩层 — 盖住整个页面 */
+        .遮罩 {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            /* 入场动画 */
+            animation: 淡入 0.25s ease;
+        }
+
+        @keyframes 淡入 {
+            from { opacity: 0; }
+            to   { opacity: 1; }
+        }
+
+        /* 弹窗本体 — 毛玻璃卡片 */
+        .弹窗 {
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            border-radius: 20px;
+            padding: 32px 40px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            text-align: center;
+            max-width: 340px;
+            /* 弹入动画 */
+            animation: 弹入 0.35s ease;
+        }
+
+        @keyframes 弹入 {
+            from {
+                opacity: 0;
+                transform: scale(0.9) translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+
+        .弹窗 p {
+            font-size: 16px;
+            color: #1d1d1f;
+            margin-bottom: 24px;
+            line-height: 1.5;
+        }
+
+        .弹窗 button {
+            background: #0071e3;
+            color: #fff;
+            border: none;
+            padding: 10px 36px;
+            border-radius: 20px;
+            font-size: 15px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .弹窗 button:hover {
+            background: #0077ed;
+            box-shadow: 0 4px 14px rgba(0, 113, 227, 0.35);
+            transform: translateY(-1px);
+        }
+
+        .弹窗 button:active {
+            transform: scale(0.96);
+        }
+    </style>
+</head>
+<body>
+    <h1>待办清单</h1>
+
+    <div class="卡片" id="清单卡片">
+        <p id="计数显示">共 0 项</p>
+    </div>
+
+    <input type="text" id="待办输入" placeholder="输入待办事项">
+    <br>
+    <button id="添加按钮">添加</button>
+    <button id="删除最后按钮">删除最后</button>
+
+    <script src="待办清单.js"></script>
+</body>
+</html>

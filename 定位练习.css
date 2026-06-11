@@ -1,0 +1,63 @@
+/* === reset：清零默认样式 === */
+* {
+  margin: 0;                /* 清除所有元素默认外边距 */
+  padding: 0;               /* 清除所有元素默认内边距 */
+  box-sizing: border-box;   /* 宽高包含边框，计算更直观 */
+}
+body {
+  background: blue;                      /* 页面背景：蓝色 */
+  font-family: "Microsoft YaHei", sans-serif;  /* 字体：微软雅黑 */
+  padding: 40px;                         /* 内边距，内容不贴浏览器边缘 */
+}
+/* === 外层灰盒子：flex 定位的参照容器 === */
+.盒子 {
+  width: 500px;              /* 盒子宽度 500 像素 */
+  height: 120px;             /* 盒子高度 120 像素 */
+  background: aliceblue;     /* 背景色：爱丽丝蓝 */
+  border: 2px dashed #999;   /* 2px 虚线边框，练习时看清边界 */
+  margin-bottom: 30px;       /* 下外边距，三个盒子之间不贴在一起 */
+  position: relative;        /* 作为 absolute 子元素的定位参照 */
+}
+/* === 蓝/红方块公共样式 === */
+.子元素 {
+  width: 80px;               /* 方块宽度 */
+  height: 80px;              /* 方块高度，与宽度相同=正方形 */
+  background: red;           /* 方块背景：红色 */
+  color: black;              /* 字母颜色：黑色 */
+  font-size: 28px;           /* 字母大小 28 像素 */
+  display: flex;             /* 弹性布局，让字母居中 */
+  align-items: center;       /* 垂直居中 */
+  justify-content: center;   /* 水平居中 */
+}
+/* === 第一种定位：relative === */
+/* 相对自己原来位置偏移，原位置继续占着 */
+.一 {
+  position: relative;   /* 相对定位 */
+  left: 40px;           /* 从左边往右推 40px */
+  top: 20px;            /* 从上边往下推 20px */
+}
+/* === 第二种定位：absolute === */
+/* 脱离文档流，相对最近的定位祖先（父盒子 .盒子）定位 */
+.二 {
+  position: absolute;   /* 绝对定位 */
+  right: 0;             /* 贴父盒子右边 */
+  bottom: 0;            /* 贴父盒子下边 */
+}
+.三 {
+  position: fixed;    /* 固定定位 */
+  right: 20px;       /* 贴浏览器右边，距离 20px */
+  bottom: 20px;      /* 贴浏览器下边，距离 20px */
+}
+.粘性导航 {
+  position: sticky; /*粘性定位*/
+  top: 0; /* 滚动到离窗口顶部0像素时粘住 */
+  background: #333; /* 背景色：深灰色 */
+  color: white; /* 字体颜色：白色 */
+  padding: 16px; /* 内边距 */
+  font-size: 18px; /* 字体大小 */
+}
+.滚动内容 {
+  height: 2000px; /* 内容高度，足够产生滚动条 */
+  background:white;
+  padding: 20px; /* 内边距 */
+}

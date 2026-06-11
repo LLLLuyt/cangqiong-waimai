@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ZH-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>标签添加器</title>
+    <style>
+        body {
+            background-color: #1d1d1d;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding-top: 50px;
+        }
+        .卡片 {
+            background: #2d2d2d;
+            border-radius: 15px;
+            padding: 30px;
+            margin: 20px auto;
+            width: 400px;
+            min-height: 80px;
+        }
+        .标签 {
+            display: inline-block;
+            background: #2196F3;
+            color: #fff;
+            padding: 6px 14px;
+            margin: 4px;
+            border-radius: 20px;
+            font-size: 14px;
+        }
+        button {
+            background: #4caf50;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 5px;
+        }
+        #删除最后按钮 {
+            background: #f44336;
+        }
+        input {
+            display: block;
+            margin: 10px auto;
+            padding: 10px;
+            border-radius: 10px;
+            border: none;
+            font-size: 16px;
+            text-align: center;
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+    <h1>标签添加器</h1>
+
+    <div class="卡片" id="标签卡片">
+        <p id="计数显示">共 0 个标签</p>
+    </div>
+
+    <input type="text" id="标签输入" placeholder="输入标签名">
+    <br>
+    <button id="添加按钮">添加</button>
+    <button id="删除最后按钮">删除最后</button>
+
+    <script src="标签添加器.js"></script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: "Microsoft YaHei", sans-serif;
+    background-color: #f5f5f5;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.登录框 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: azure;
+    flex-direction: column;
+    padding: 60px;
+    border-radius: 20px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.12);
+}
+.账号 {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.密码 {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.登录 button{
+    background: #f5f5f5;
+    border: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    padding: 10px 30px;
+    border-radius: 15px;
+}
+.登录 button:hover {
+    background: #2b82f4;
+    box-shadow: 0 12px 15px rgba(42, 42, 42, 0.2);
+    transform: translateY(-4px) scale(1.03);
+    border-radius: 15px;
+}
+input {
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    border-radius: 16px;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+input:focus {
+    border-color: #007aff;
+}

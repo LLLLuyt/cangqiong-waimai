@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>计分板</title>
+    <style>
+        /* ====== 苹果风格 + 毛玻璃 ====== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100%;
+            background: #0093b4;
+        }
+
+        h1 {
+             display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 34px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            color: #001087;
+            margin-bottom: 10px;
+            margin-top: 50px;
+        }
+        .卡片  {
+            width: 300px;
+            margin: auto;
+            background: rgba(225, 225, 225, 0.55);
+            margin-top: 10px;
+            padding: 50px ;
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 10px;
+        }
+        #计数显示 {
+            color: #f0f0f5;
+            font-weight: bold;
+            background: rgba(191, 188, 188, 0.5);
+            backdrop-filter: blur(10px);
+            border-radius: 25px;
+            padding: 7% 15px;
+        }
+        input {
+            display: block;
+            margin: 20px auto;
+            padding: 10px;
+            width: 200px;
+            border-radius: 10px;
+            border: 1px solid #ccc;
+        }
+        button {
+            display: block;
+            margin: 10px auto;
+            padding: 10px 20px;
+            border-radius: 10px;
+            border: none;
+            background-color: #4CAF50;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        #删除 {
+            background: red;
+        }
+        button:hover {
+            transform: translateY(-2px) scale(1.05);
+        }
+        button:active {
+            transform: translateY(0) scale(1);
+        }
+        .玩家分数 {
+            color: #f0f0f5;
+            font-weight: bold;
+            background: rgba(226, 59, 59, 0.5);
+            backdrop-filter: blur(10px);
+            border-radius: 25px;
+            padding: 7% 15px;
+        }
+        p {
+            text-align: center;
+        }
+
+        </style>
+</head>
+<body>
+    <h1>计分板</h1>
+    <div class="卡片"  id="卡片">
+        <p id ="计数显示">共 0 个玩家</p>
+    </div>
+
+    <input type="text" placeholder="请输入胜利的玩家名" id="文本框">
+    <button id="添加">添加玩家</button>
+    <button id="删除">删除玩家</button>
+
+    <script src="计分板.js"></script>
+</body>
+</html>

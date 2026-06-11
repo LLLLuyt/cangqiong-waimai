@@ -1,0 +1,29 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background: blue;
+  font-family: "Microsoft YaHei", sans-serif;
+  padding: 40px;
+}
+.容器 {
+  display: grid; /* 使用 Grid 布局 */
+  grid-template-columns: 1fr 1fr 1fr; /* 定义三列，每列宽度相等 */
+  grid-template-rows: 100px 100px 100px; /* 定义三行，每行高度 100px */
+  gap: 16px; /* 网格间距 */
+}
+.格 {
+  background: aliceblue;
+  color:brown;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+}
+.格:first-child {
+  grid-column: span 2; /* 第一个格子占两列 */
+  grid-row: span 2; /* 第一个格子占两行 */
+}
