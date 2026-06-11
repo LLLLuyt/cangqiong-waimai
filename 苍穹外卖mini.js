@@ -7,7 +7,7 @@ if (Bdata !==null){
 else {
     订单数组 = [];//为空防止后面报错
 }
-更新数据看板();
+更新数据看板();更新销量排行();
 
 let 购物车;
 let Adata = localStorage.getItem("购物车");
@@ -200,7 +200,7 @@ let 结算按钮 = document.querySelector(".endbtn");
                 document.querySelector("#数量徽标").textContent = 总数量;
                 document.querySelector("#总价").textContent = "¥0";
                 alert("下单成功!订单号：" + 订单号);
-                更新数据看板();
+                更新数据看板();更新销量排行();
                 遮罩.remove();
             });
             弹窗.querySelector(".取消下单").addEventListener("click",function() {
@@ -229,3 +229,40 @@ let 结算按钮 = document.querySelector(".endbtn");
             document.querySelector("#累计金额").textContent = "¥" + 累计金额;
         }
 /*========================================================*/
+function 更新销量排行() {
+let 排行数据 = [];
+订单数组.forEach(function(订单) {
+    订单.菜品.forEach(function(菜) {
+        let Cdata = 排行数据.find(function(item) {
+            return item.菜名 === 菜.菜名
+        });
+        if (Cdata) {
+            Cdata.销量 += 菜.数量;
+        } else {
+            排行数据.push({
+                菜名: 菜.菜名,
+                销量: 菜.数量
+            })
+        }
+    })
+})
+排行数据.sort(function(a,b) {
+         return b.销量 - a.销量;
+         
+})
+let Firstfour = 排行数据.slice(0,4);
+
+let topbox = "";
+
+Firstfour.forEach(function(item,i) {
+    topbox +=`
+    <div class="排行项">
+        <span class="名次">${i+1}</span>
+        <span class="菜名">${item.菜名}</span>
+        <span class="销量">${item.销量}</span>
+    </div>
+    `;
+})
+
+document.querySelector("#排行列表").innerHTML = topbox;
+}
