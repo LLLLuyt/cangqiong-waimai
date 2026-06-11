@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>苍穹外卖</title>
+    <link rel="stylesheet" href="苍穹外卖mini.css">
+</head>
+<body>
+    <h1>润舟外卖</h1>
+
+    <div class="外壳">
+        <div class="搜索区">
+            <input class="搜索框" type="text" id="搜索框" placeholder="搜索菜品">
+        </div>
+        <div class="菜单区">
+            <div class="分类栏">
+                <div>
+                    <button  class="分类按钮">全部</button>
+                    <button  class="分类按钮">主食</button>
+                    <button  class="分类按钮">小吃</button>
+                    <button  class="分类按钮">饮品</button>
+                </div>
+            </div><div class="菜品列表" id="菜单"></div>
+        </div>
+    </div>
+
+    <div class="datakanban">
+        <span>累计订单:
+            <span id="累计订单数">0</span>
+        </span>
+        <span>累计营业额:
+            <span id="累计金额">￥0</span>
+        </span>
+    </div>
+
+    <div class="底部栏">
+         <div class="购物车图标区">
+            <span class="购物车图标">🛒</span>
+            <span class="数量徽标" id="数量徽标">0</span>
+         </div>
+        <div class="总价" id="总价">￥0</div>
+        <div class="endbtn">去结算</div>
+    </div>
+
+<script src="苍穹外卖mini.js"></script>
+</body>
+</html>
