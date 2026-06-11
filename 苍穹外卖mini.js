@@ -259,7 +259,7 @@ Firstfour.forEach(function(item,i) {
     <div class="排行项">
         <span class="名次">${i+1}</span>
         <span class="菜名">${item.菜名}</span>
-        <span class="销量">${item.销量}</span>
+        <span class="销量">${item.销量}份</span>
     </div>
     `;
 })
