@@ -27,7 +27,7 @@ h1 {
 .卡片 {
     background: white;
     border-radius: 15px;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
     padding: 40px;
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -50,7 +50,7 @@ h1 {
 .价格 {
     font-size: 20px;
     font-weight: 600;
-    color: #34c759;
+    color: #e94e3c;
     margin-bottom: 8px;
 }
 
@@ -72,7 +72,7 @@ h1 {
 .卡片:hover {
     cursor: pointer;
     transform: translateY(-2px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
 }
 
 .加号 {
@@ -83,7 +83,7 @@ h1 {
 }
 
 .底部栏 {
-    background: rgba(86, 28, 209, 0.9);
+    background: rgba(0, 0, 0, 0.9);
     width: calc(100% - 40px);
     left: 20px;
     right: 20px;
@@ -173,17 +173,13 @@ h1 {
 }
 
 .弹窗内容 {
-    background: #f3f4f7;
-    display: grid;
-    place-items: center;
-    border-radius: 15px;
     background: white;
-    padding: 40px;
     border-radius: 15px;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
     text-align: center;
     min-width: 300px;
     position: relative;
+    padding: 40px;
 }
 
 .关闭按钮 {
@@ -200,7 +196,7 @@ h1 {
 }
 
 .搜索框 {
-    border-radius: 5px;
+    border-radius: 15px;
     border: 2px solid #f5f5f7;
     padding: 8px 12px;
     width: 100%;
